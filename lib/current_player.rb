@@ -1,6 +1,6 @@
 def turn_count(board)
     turn = 0 
-    if turn.size < board 
+    if turn <= board.size
         turn += 1 
     end
     turn
@@ -10,7 +10,7 @@ def current_player(board)
     turn_count(board) % 2 == 0 ? "X" : "O"
   end
 
-def turn_count(board)
+  def turn_count(board)
     turn = 0
     
     board.each do |user| 
