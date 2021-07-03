@@ -1,22 +1,16 @@
 def turn_count(board)
-    turn = 0 
-    if turn <= board.size
-        turn += 1 
+    # board.count{|token| token == "X" || token == "O"}
+  
+    turns = 0
+    board.each do |token|
+      if token == "X" || token == "O"
+        turns += 1
+      end
     end
-    turn
-end 
-
-def current_player(board)
+    turns
+  
+  end
+  
+  def current_player(board)
     turn_count(board) % 2 == 0 ? "X" : "O"
   end
-
-  def turn_count(board)
-    turn = 0
-    
-    board.each do |user| 
-        if  user == "X" || user == "O"
-            turn += 1 
-        end     
-    end
-    return turn
-end 
